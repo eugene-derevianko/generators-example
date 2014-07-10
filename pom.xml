@@ -24,8 +24,8 @@
         </dependency>
         <dependency>
             <groupId>com.github.symulakr</groupId>
-            <artifactId>generators</artifactId>
-            <version>1.0</version>
+            <artifactId>gwt-generators</artifactId>
+            <version>alfa</version>
             <scope>compile</scope>
         </dependency>
 

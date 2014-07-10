@@ -2,7 +2,7 @@
 <module rename-to='GeneratorsExample'>
     <inherits name='com.google.gwt.user.User'/>
 
-    <inherits name='com.github.symulakr.gwt.generators.Generators'/>
+    <inherits name='com.github.symulakr.gwt.generators.GwtGenerators'/>
 
     <set-property name="user.agent" value="safari"/>
     <extend-property name="user.agent" values="gecko1_8"/>

@@ -1,3 +1,12 @@
+# Ignore intellij files
+.idea
+*.iml
+*.ipr
+*.iws
+*.ids
+
+target
+
 *.class
 
 # Mobile Tools for Java (J2ME)

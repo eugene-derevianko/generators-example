@@ -49,19 +49,24 @@ public class CustomerProvider
 
    private String getLastName()
    {
-      return LAST_NAMES[rnd.nextInt(LAST_NAMES.length)];
+      return getRandomString(LAST_NAMES);
    }
 
    private String getFirstName()
    {
       if (rnd.nextBoolean())
       {
-         return MALE_FIRST_NAMES[rnd.nextInt(MALE_FIRST_NAMES.length)];
+         return getRandomString(MALE_FIRST_NAMES);
       }
       else
       {
-         return FEMALE_FIRST_NAMES[rnd.nextInt(FEMALE_FIRST_NAMES.length)];
+         return getRandomString(FEMALE_FIRST_NAMES);
       }
+   }
+
+   private String getRandomString(String[] array)
+   {
+      return array[rnd.nextInt(array.length)];
    }
 
    private static final String[] FEMALE_FIRST_NAMES =

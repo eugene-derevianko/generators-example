@@ -9,7 +9,7 @@ public class CustomerExt extends Customer
 
 
    @Override
-   @Column(header = "First Nameeee")
+   @Column(header = "First Name", index = 1)
    public String getFirstName()
    {
       return super.getFirstName();

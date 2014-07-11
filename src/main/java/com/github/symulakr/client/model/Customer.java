@@ -26,7 +26,7 @@ public class Customer implements CellTableModel
       this.firstName = firstName;
    }
 
-   @Column(header = "Last Name")
+   @Column(header = "Last Name", index = 1)
    public String getLastName()
    {
       return lastName;
@@ -37,7 +37,7 @@ public class Customer implements CellTableModel
       this.lastName = lastName;
    }
 
-   @Column(cellType = SafeHtmlCell.class)
+   @Column(cellType = SafeHtmlCell.class, index = -33)
    public SafeHtml getEmail()
    {
       return email;
@@ -48,7 +48,7 @@ public class Customer implements CellTableModel
       this.email = email;
    }
 
-   @Column(header = "Number")
+   @Column(header = "Number" , index = 0)
    public String getPhoneNumber()
    {
       return phoneNumber;

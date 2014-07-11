@@ -1,0 +1,18 @@
+.cellTableHeader {
+    outline: 0 none;
+    vertical-align: baseline;
+    background: none repeat scroll 0 0 #666;
+    color: #FFF;
+    font-weight: bold;
+    padding: 4px 5px;
+    text-align: left;
+    text-transform: uppercase;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+    text-shadow: none;
+    border-bottom: none;
+}
+
+.cellTableHoveredRowCell a{
+    color: #FFF;
+}

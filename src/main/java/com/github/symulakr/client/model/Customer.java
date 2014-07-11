@@ -1,25 +1,21 @@
 package com.github.symulakr.client.model;
 
 import com.github.symulakr.gwt.generators.annotation.celltable.Column;
+import com.github.symulakr.gwt.generators.annotation.celltable.TableResources;
 import com.github.symulakr.gwt.generators.client.celltable.CellTableModel;
 import com.google.gwt.cell.client.SafeHtmlCell;
 import com.google.gwt.safehtml.shared.SafeHtml;
 
+@TableResources(CellTableRes.class)
 public class Customer implements CellTableModel
 {
 
-   @Column
    private String firstName;
-
-   @Column
    private String lastName;
-
-   @Column (cellType = SafeHtmlCell.class)
    private SafeHtml email;
-
-   @Column (header = "Number")
    private String phoneNumber;
 
+   @Column(header = "First Name")
    public String getFirstName()
    {
       return firstName;
@@ -30,6 +26,7 @@ public class Customer implements CellTableModel
       this.firstName = firstName;
    }
 
+   @Column(header = "Last Name")
    public String getLastName()
    {
       return lastName;
@@ -40,6 +37,7 @@ public class Customer implements CellTableModel
       this.lastName = lastName;
    }
 
+   @Column(cellType = SafeHtmlCell.class)
    public SafeHtml getEmail()
    {
       return email;
@@ -50,6 +48,7 @@ public class Customer implements CellTableModel
       this.email = email;
    }
 
+   @Column(header = "Number")
    public String getPhoneNumber()
    {
       return phoneNumber;

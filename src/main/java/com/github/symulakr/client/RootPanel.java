@@ -3,6 +3,7 @@ package com.github.symulakr.client;
 import java.util.List;
 
 import com.github.symulakr.client.model.Customer;
+import com.github.symulakr.client.model.CustomerExt;
 import com.github.symulakr.client.model.CustomerProvider;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.uibinder.client.UiBinder;
@@ -20,15 +21,20 @@ public class RootPanel extends Composite
 
    private static RootPanelUiBinder ourUiBinder = GWT.create(RootPanelUiBinder.class);
    @UiField
-   SimplePanel panel;
+   SimplePanel panel1;
+   @UiField
+   SimplePanel panel2;
 
-   private CellTable<Customer> table = GWT.create(Customer.class);
+   private CellTable<Customer> table1 = GWT.create(Customer.class);
+   private CellTable<Customer> table2 = GWT.create(CustomerExt.class);
 
    public RootPanel()
    {
       initWidget(ourUiBinder.createAndBindUi(this));
       List<Customer> customers = new CustomerProvider().getCustomers(20);
-      table.setRowData(customers);
-      panel.setWidget(table);
+      table1.setRowData(customers);
+      panel1.setWidget(table1);
+      table2.setRowData(customers);
+      panel2.setWidget(table2);
    }
 }

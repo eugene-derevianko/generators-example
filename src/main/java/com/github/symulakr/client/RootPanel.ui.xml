@@ -3,6 +3,7 @@
 
     <g:HTMLPanel>
         <h1>Generators Example</h1>
-        <g:SimplePanel ui:field="panel" styleName="table-holder"/>
+        <g:SimplePanel ui:field="panel1" styleName="table-holder"/>
+        <g:SimplePanel ui:field="panel2" styleName="table-holder"/>
     </g:HTMLPanel>
 </ui:UiBinder>

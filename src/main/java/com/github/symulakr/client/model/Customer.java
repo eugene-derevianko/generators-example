@@ -1,12 +1,11 @@
 package com.github.symulakr.client.model;
 
 import com.github.symulakr.gwt.generators.annotation.celltable.Column;
-import com.github.symulakr.gwt.generators.annotation.celltable.TableResources;
 import com.github.symulakr.gwt.generators.client.celltable.CellTableModel;
+import com.google.gwt.cell.client.ClickableTextCell;
 import com.google.gwt.cell.client.SafeHtmlCell;
 import com.google.gwt.safehtml.shared.SafeHtml;
 
-@TableResources(CellTableRes.class)
 public class Customer implements CellTableModel
 {
 
@@ -15,7 +14,7 @@ public class Customer implements CellTableModel
    private SafeHtml email;
    private String phoneNumber;
 
-   @Column(header = "First Name")
+   @Column(header = "First Name", position = 0, fieldUpdater = FieldUpdaterImpl.class, cellType = ClickableTextCell.class)
    public String getFirstName()
    {
       return firstName;
@@ -26,7 +25,7 @@ public class Customer implements CellTableModel
       this.firstName = firstName;
    }
 
-   @Column(header = "Last Name", index = 1)
+   @Column(header = "Last Name", position = 1, fieldUpdater = FieldUpdaterImpl.class, cellType = ClickableTextCell.class)
    public String getLastName()
    {
       return lastName;
@@ -37,7 +36,14 @@ public class Customer implements CellTableModel
       this.lastName = lastName;
    }
 
-   @Column(cellType = SafeHtmlCell.class, index = -33)
+   @Column(header = "Number" , position = 3)
+   public int getPhoneNumber()
+   {
+      return 55;
+   }
+
+
+   @Column(cellType = SafeHtmlCell.class, position = 2)
    public SafeHtml getEmail()
    {
       return email;
@@ -48,11 +54,7 @@ public class Customer implements CellTableModel
       this.email = email;
    }
 
-   @Column(header = "Number" , index = 0)
-   public String getPhoneNumber()
-   {
-      return phoneNumber;
-   }
+
 
    public void setPhoneNumber(String phoneNumber)
    {

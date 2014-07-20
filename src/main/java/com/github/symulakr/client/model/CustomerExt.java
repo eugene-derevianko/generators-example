@@ -1,8 +1,9 @@
 package com.github.symulakr.client.model;
 
-import com.github.symulakr.gwt.generators.annotation.celltable.Column;
-import com.github.symulakr.gwt.generators.annotation.celltable.Table;
-import com.github.symulakr.gwt.generators.annotation.celltable.TableResources;
+
+import com.github.symulakr.gwt.generators.client.celltable.annotation.Column;
+import com.github.symulakr.gwt.generators.client.celltable.annotation.Table;
+import com.github.symulakr.gwt.generators.client.celltable.annotation.TableResources;
 
 @Table(CustomCellTable.class)
 @TableResources(CellTableRes.class)

@@ -1,12 +1,12 @@
 package com.github.symulakr.client.model;
 
-import java.util.Comparator;
-import java.util.List;
-
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.ColumnSortEvent.ListHandler;
 import com.google.gwt.view.client.ListDataProvider;
+
+import java.util.Comparator;
+import java.util.List;
 
 public abstract class CustomCellTable<M> extends CellTable<M>
 {
@@ -47,10 +47,6 @@ public abstract class CustomCellTable<M> extends CellTable<M>
       super(pageSize, resources);
       dataProvider.addDataDisplay(this);
    }
-
-
-
-
 
    protected ListHandler<M> createColumnSortHandler(Column<M, ?> column, Comparator<M> comparator)
    {

@@ -8,11 +8,12 @@
     <groupId>com.github.symulakr</groupId>
     <artifactId>generators-example</artifactId>
     <packaging>war</packaging>
-    <version>1.0-SNAPSHOT</version>
+    <version>1.0</version>
     <name>Generators Example</name>
 
     <properties>
         <webappDirectory>${project.build.directory}/${project.build.finalName}</webappDirectory>
+        <tomcat-maven.version>2.1</tomcat-maven.version>
         <gwt.version>2.6.1</gwt.version>
     </properties>
 
@@ -83,5 +84,36 @@
             </plugin>
         </plugins>
     </build>
+    <profiles>
+        <profile>
+            <id>local_tomcat</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat7-maven-plugin</artifactId>
+                        <version>${tomcat-maven.version}</version>
+                        <executions>
+                            <execution>
+                                <id>install_to_tomcat</id>
+                                <phase>
+                                    install
+                                </phase>
+                                <goals>
+                                    <goal>deploy-only</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                        <configuration>
+                            <url>http://localhost:8080/manager/text</url>
+                            <server>local_tomcat</server>
+                            <path>/${artifactId}</path>
+                            <update>true</update>
+                        </configuration>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 
 </project>

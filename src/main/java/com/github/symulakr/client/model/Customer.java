@@ -1,7 +1,7 @@
 package com.github.symulakr.client.model;
 
-import com.github.symulakr.gwt.generators.annotation.celltable.Column;
 import com.github.symulakr.gwt.generators.client.celltable.CellTableModel;
+import com.github.symulakr.gwt.generators.client.celltable.annotation.Column;
 import com.google.gwt.cell.client.ClickableTextCell;
 import com.google.gwt.cell.client.SafeHtmlCell;
 import com.google.gwt.safehtml.shared.SafeHtml;

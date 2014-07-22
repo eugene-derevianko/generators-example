@@ -25,7 +25,7 @@ public class Customer implements CellTableModel
       this.firstName = firstName;
    }
 
-   @Column(header = "Last Name", position = 1, fieldUpdater = FieldUpdaterImpl.class, cellType = ClickableTextCell.class)
+   @Column(header = "Last Name", position = 1, cellType = ClickableTextCell.class)
    public String getLastName()
    {
       return lastName;

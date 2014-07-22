@@ -10,17 +10,39 @@ import com.google.gwt.safehtml.shared.SafeHtml;
 
 public class CustomerProvider
 {
-
-   private Random rnd = new Random();
+   private final long SEED = System.currentTimeMillis();
+   private Random rnd;
 
    public List<Customer> getCustomers(int count)
    {
+      rnd = new Random(SEED);
       List<Customer> list = new ArrayList<>(count);
       for (int i = 0; i < count; i++)
       {
          list.add(nextCustomer());
       }
       return list;
+   }
+
+   public List<CustomerExt> getCustomersExt(int count)
+   {
+      rnd = new Random(SEED);
+      List<CustomerExt> list = new ArrayList<>(count);
+      for (int i = 0; i < count; i++)
+      {
+         list.add(nextCustomerExt());
+      }
+      return list;
+   }
+
+   public CustomerExt nextCustomerExt()
+   {
+      CustomerExt customer = new CustomerExt();
+      customer.setFirstName(getFirstName());
+      customer.setLastName(getLastName());
+      String email = getEmail(customer.getFirstName(), customer.getLastName());
+      customer.setEmail(htmlTemplate.getEmail(email, customer.getFirstName(), customer.getLastName()));
+      return customer;
    }
 
    public Customer nextCustomer()
@@ -40,7 +62,6 @@ public class CustomerProvider
    }
 
    protected static Template htmlTemplate = GWT.create(Template.class);
-
 
    private String getEmail(String firstName, String lastName)
    {

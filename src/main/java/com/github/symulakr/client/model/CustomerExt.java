@@ -14,7 +14,7 @@ public class CustomerExt extends Customer implements CellTableModel
 
 
    @Override
-   @Column(header = "First Name", position = 2)
+   @Column(header = "First Name", position = 2, footer = "Footer")
    public String getFirstName()
    {
       return super.getFirstName();

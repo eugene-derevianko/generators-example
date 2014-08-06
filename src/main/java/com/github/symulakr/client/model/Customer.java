@@ -2,7 +2,6 @@ package com.github.symulakr.client.model;
 
 import com.github.symulakr.gwt.generators.client.celltable.CellTableModel;
 import com.github.symulakr.gwt.generators.client.celltable.annotation.Column;
-import com.github.symulakr.gwt.generators.client.celltable.annotation.ColumnActions;
 import com.google.gwt.cell.client.ClickableTextCell;
 import com.google.gwt.cell.client.SafeHtmlCell;
 import com.google.gwt.safehtml.shared.SafeHtml;
@@ -16,7 +15,7 @@ public class Customer implements CellTableModel
    private String phoneNumber;
 
    @Column(header = "First Name", cellType = ClickableTextCell.class)
-   @ColumnActions(position = 0, fieldUpdater = FieldUpdaterImpl.class)
+//   @ColumnActions(position = 0, fieldUpdater = FieldUpdaterImpl.class)
    public String getFirstName()
    {
       return firstName;
@@ -28,7 +27,7 @@ public class Customer implements CellTableModel
    }
 
    @Column(header = "Last Name", cellType = ClickableTextCell.class)
-   @ColumnActions(position = 1)
+//   @ColumnActions(position = 1)
    public String getLastName()
    {
       return lastName;
@@ -40,7 +39,7 @@ public class Customer implements CellTableModel
    }
 
    @Column(header = "Number")
-   @ColumnActions(position = 3)
+//   @ColumnActions(position = 3)
    public int getPhoneNumber()
    {
       return 55;
@@ -48,7 +47,7 @@ public class Customer implements CellTableModel
 
 
    @Column(cellType = SafeHtmlCell.class)
-   @ColumnActions(position = 2)
+//   @ColumnActions(position = 2)
    public SafeHtml getEmail()
    {
       return email;

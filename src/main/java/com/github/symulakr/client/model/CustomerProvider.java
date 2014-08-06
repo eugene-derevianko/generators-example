@@ -1,12 +1,12 @@
 package com.github.symulakr.client.model;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.safehtml.client.SafeHtmlTemplates;
 import com.google.gwt.safehtml.shared.SafeHtml;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 public class CustomerProvider
 {
@@ -20,6 +20,17 @@ public class CustomerProvider
       for (int i = 0; i < count; i++)
       {
          list.add(nextCustomer());
+      }
+      return list;
+   }
+
+   public List<User> getUserss(int count)
+   {
+      rnd = new Random(SEED);
+      List<User> list = new ArrayList<>(count);
+      for (int i = 0; i < count; i++)
+      {
+         list.add(nextUser());
       }
       return list;
    }
@@ -52,6 +63,16 @@ public class CustomerProvider
       customer.setLastName(getLastName());
       String email = getEmail(customer.getFirstName(), customer.getLastName());
       customer.setEmail(htmlTemplate.getEmail(email, customer.getFirstName(), customer.getLastName()));
+      return customer;
+   }
+
+   public User nextUser()
+   {
+      User customer = new User();
+      customer.setFirstName(getFirstName());
+      customer.setLastName(getLastName());
+      String email = getEmail(customer.getFirstName(), customer.getLastName());
+      customer.setEmail(email);
       return customer;
    }
 
